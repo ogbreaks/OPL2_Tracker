@@ -4,7 +4,7 @@ OPL2_Tracker aims to develop a simple and generic hardware music tracker that co
 
 Essentially this is currently a fork of a simple tracker coded by Linus Åkesson, although no repo exists to link to on GitHub to my knowledge. All initial code is freely available online and adapted from Linus Åkesson. All rights to his code are retained by Linus.
 
-Please see <a href="https://www.linusakesson.net/index.php">Linus' website /a> for further details on all the great work he has done.
+Please see <a href="https://www.linusakesson.net/index.php">Linus' website</a> for further details on all the great work he has done.
 
 Nick
 
