@@ -1,6 +1,6 @@
 # OPL2_Tracker
 
-OPL2_Tracker aims to develop a simple and generic hardware music tracker that could be useful for DIY embedded OPL2 synth projects.
+OPL2_Tracker aims to develop a simple hardware music tracker that could be useful for DIY embedded OPL2 synth projects.
 
 Currently this is essentially a fork of a simple hardware music tracker coded by Linus Åkesson (lft) in 2007 that he called 'music chip tracker 0.1'. Although no repo exists to link to on GitHub to my knowledge. A code is freely available online and the code here is taken from the original code by Linus Åkesson. All rights to his code are retained by Linus.
 
