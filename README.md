@@ -1,7 +1,10 @@
 # OPL2_Tracker
-I aim to create a simple and generic hardware music tracker which I can use in my embedded synth projects. Essentially this is currently a fork of a simple tracker designed and implemnented by Linus Åkesson although no repo exists on github currently. All initial code is freely available and adapted from Linus Åkesson but all rights on this code are retained by him until further notice - once I have contacted him.
 
-Please see https://www.linusakesson.net/index.php for his great work on chiptunes and much more!
+OPL2_Tracker aims to develop a simple and generic hardware music tracker that could be useful for DIY embedded OPL2 synth projects.
+
+Essentially this is currently a fork of a simple tracker coded by Linus Åkesson, although no repo exists currently on GitHub to my knowledge. All initial code is freely available online and adapted from Linus Åkesson. All rights to his code are retained by Linus.
+
+Please see https://www.linusakesson.net/index.php for further details on all the work he has done.
 
 Nick
 
