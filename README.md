@@ -34,8 +34,7 @@ Use < and > to change the current octave. The main part of the keyboard is used
 to enter notes. The keyboard layout is adapted for a US qwerty keymap. You can
 edit gui.c to change this to fit a Dvorak keymap instead.
 
-Press ^E (control-E) to exit without saving. Press ^W ("write") to save. Press
-# to optimize the song (remove unused tracks, move tracks together).
+Press ^E (control-E) to exit without saving. Press ^W ("write") to save. Press # to optimize the song (remove unused tracks, move tracks together).
 
 In the song and instrument editors, use capital A, I and D to add, insert and
 delete lines. In the track and instrument editors, use capital C and V for copy
