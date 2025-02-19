@@ -127,13 +127,13 @@ int main(int argc, char **argv) {
 
     SDL_PauseAudio(0);
 
+    guiloop();
+
     // Unregister custom event handlers if no longer needed
     unregister_event_handler(custom_key_handler);
     unregister_event_handler(custom_mouse_handler);
 
     cleanup_input();
-    
-    guiloop();
 
     return 0;
 }
