@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ncurses.h>
+#include <ncursesw/ncurses.h>
 #include <math.h>
 
 #include "stuff.h"
@@ -582,6 +582,7 @@ void export() {
 	fclose(hf);
 }
 
+// Fix misleading indentation warnings
 void handleinput() {
 	int c, x;
 	
@@ -742,14 +743,22 @@ void handleinput() {
 						switch(trackx) {
 							case 1: SETHI(track[currtrack].line[tracky].instr, x); break;
 							case 2: SETLO(track[currtrack].line[tracky].instr, x); break;
-							case 4: if(track[currtrack].line[tracky].cmd[0])
-								SETHI(track[currtrack].line[tracky].param[0], x); break;
-							case 5: if(track[currtrack].line[tracky].cmd[0])
-								SETLO(track[currtrack].line[tracky].param[0], x); break;
-							case 7: if(track[currtrack].line[tracky].cmd[1])
-								SETHI(track[currtrack].line[tracky].param[1], x); break;
-							case 8: if(track[currtrack].line[tracky].cmd[1])
-								SETLO(track[currtrack].line[tracky].param[1], x); break;
+							case 4: if(track[currtrack].line[tracky].cmd[0]) {
+								SETHI(track[currtrack].line[tracky].param[0], x); 
+							}
+							break;
+							case 5: if(track[currtrack].line[tracky].cmd[0]) {
+								SETLO(track[currtrack].line[tracky].param[0], x); 
+							}
+							break;
+							case 7: if(track[currtrack].line[tracky].cmd[1]) {
+								SETHI(track[currtrack].line[tracky].param[1], x); 
+							}
+							break;
+							case 8: if(track[currtrack].line[tracky].cmd[1]) {
+								SETLO(track[currtrack].line[tracky].param[1], x); 
+							}
+							break;
 						}
 					}
 					if(currtab == 0) {
@@ -855,6 +864,7 @@ void handleinput() {
 	}
 }
 
+// Fix snprintf warning
 void drawgui() {
 	char buf[1024];
 	int lines = LINES, cols = 79;
@@ -869,7 +879,7 @@ void drawgui() {
 	mvaddstr(2, cols - 14, buf);
 	mvaddstr(3, cols - 14, "^W)rite ^E)xit");
 
-	snprintf(buf, sizeof(buf), "^F)ilename:        %s", filename);
+	snprintf(buf, sizeof(buf), "^F)ilename:        %.1004s", filename);
 	mvaddstr(2, 15, buf);
 
 	mvaddstr(5, 0, "Song");
