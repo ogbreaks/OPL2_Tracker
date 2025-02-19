@@ -3,6 +3,9 @@
 #include <SDL2/SDL.h>
 
 #include "stuff.h"
+#include "input_lib.h"
+#include "input_processing.h"
+#include "event_handler.h"
 
 const u16 instrptr[] = {
     0, 1
@@ -61,7 +64,35 @@ void audiocb(void *userdata, Uint8 *buf, int len) {
     }
 }
 
+// Custom event handlers
+
+void custom_key_handler(InputEvent event) {
+    if (event.type == EVENT_KEY_PRESS) {
+        printf("Custom handler: Key pressed: %d\n", event.key);
+    }
+}
+
+void custom_mouse_handler(InputEvent event) {
+    if (event.type == EVENT_MOUSE_CLICK) {
+        printf("Custom handler: Mouse clicked at (%d, %d)\n", event.x, event.y);
+    }
+}
+
 int main(int argc, char **argv) {
+
+    // Initialize input library
+    init_input();
+
+    // Register custom event handlers
+    register_event_handler(custom_key_handler);
+    register_event_handler(custom_mouse_handler);
+
+    // Simulate some input events
+    process_key_press(65); // A key
+    process_mouse_click(100, 200);
+
+
+
     SDL_AudioSpec requested, obtained;
 
     if(argc != 2) {
@@ -96,7 +127,13 @@ int main(int argc, char **argv) {
 
     SDL_PauseAudio(0);
 
-    guiloop();
+    // Unregister custom event handlers if no longer needed
+    unregister_event_handler(custom_key_handler);
+    unregister_event_handler(custom_mouse_handler);
+
+    cleanup_input();
     
+    guiloop();
+
     return 0;
 }
