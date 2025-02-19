@@ -6,6 +6,7 @@
 #include "input_lib.h"
 #include "input_processing.h"
 #include "event_handler.h"
+#include "action_reaction.h" // Include the new action_reaction header
 
 const u16 instrptr[] = {
     0, 1
@@ -64,24 +65,17 @@ void audiocb(void *userdata, Uint8 *buf, int len) {
     }
 }
 
-// Custom event handlers
-
-void custom_key_handler(InputEvent event) {
-    if (event.type == EVENT_KEY_PRESS) {
-        printf("Custom handler: Key pressed: %d\n", event.key);
-    }
-}
-
-void custom_mouse_handler(InputEvent event) {
-    if (event.type == EVENT_MOUSE_CLICK) {
-        printf("Custom handler: Mouse clicked at (%d, %d)\n", event.x, event.y);
-    }
-}
+// Declare the custom event handlers
+extern void custom_key_handler(InputEvent event);
+extern void custom_mouse_handler(InputEvent event);
 
 int main(int argc, char **argv) {
 
     // Initialize input library
     init_input();
+
+    // Initialize key actions
+    init_key_actions();
 
     // Register custom event handlers
     register_event_handler(custom_key_handler);
@@ -127,6 +121,7 @@ int main(int argc, char **argv) {
 
     SDL_PauseAudio(0);
 
+    // Main loop
     guiloop();
 
     // Unregister custom event handlers if no longer needed

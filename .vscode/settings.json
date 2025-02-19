@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "event_handler.h": "c"
+        "event_handler.h": "c",
+        "stdio.h": "c"
     }
 }

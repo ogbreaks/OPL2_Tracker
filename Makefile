@@ -4,7 +4,7 @@ CC = gcc
 
 all: tracker
 
-tracker: main.o chip.o gui.o input_lib.o event_handler.o input_processing.o input_event.o input_utils.o
+tracker: main.o chip.o gui.o input_lib.o event_handler.o input_processing.o input_event.o input_utils.o action_reaction.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.c stuff.h Makefile
