@@ -6,7 +6,7 @@
 #include "input_lib.h"
 #include "input_processing.h"
 #include "event_handler.h"
-#include "action_reaction.h" // Include the new action_reaction header
+#include "action_reaction.h"
 
 const u16 instrptr[] = {
     0, 1
@@ -71,9 +71,11 @@ extern void custom_mouse_handler(InputEvent event);
 
 int main(int argc, char **argv) {
 
+    // Breakpoint 1: Start of the main function
     // Initialize input library
     init_input();
 
+    // Breakpoint 2: After initializing the input library
     // Initialize key actions
     init_key_actions();
 
@@ -81,6 +83,7 @@ int main(int argc, char **argv) {
     register_event_handler(custom_key_handler);
     register_event_handler(custom_mouse_handler);
 
+    // Breakpoint 3: After registering custom event handlers
     // Simulate some input events
     process_key_press(65); // A key
     process_mouse_click(100, 200);
@@ -121,6 +124,7 @@ int main(int argc, char **argv) {
 
     SDL_PauseAudio(0);
 
+    // Breakpoint 4: Before entering the main loop
     // Main loop
     guiloop();
 

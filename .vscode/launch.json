@@ -5,9 +5,9 @@
       "type": "cppdbg",
       "request": "launch",
       "name": "Launch Tracker",
-      "program": "${workspaceFolder}/tracker",
-      "args": ["<filename>"], // Replace <filename> with the actual filename or pass it as an argument
-      "stopAtEntry": false,
+      "program": "${workspaceFolder}/tracker.exe", // Path to your existing executable
+      "args": ["test2.song"], // Replace <filename> with the actual filename or pass it as an argument
+      "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
@@ -19,8 +19,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build",
-      "miDebuggerPath": "/usr/bin/gdb", // Adjust this path if necessary
+      "miDebuggerPath": "c:/msys64/mingw64/bin/gdb.exe", // Adjust this path if necessary
       "logging": {
         "engineLogging": true
       }
